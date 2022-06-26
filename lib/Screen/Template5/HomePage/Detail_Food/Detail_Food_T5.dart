@@ -109,15 +109,9 @@ class _DetailPageT5State extends State<DetailPageT5> {
                     Row(
                       children: <Widget>[
                         Expanded(
-                          child: RaisedButton(
+                          child: ElevatedButton(
                             onPressed: () {},
-                            padding: EdgeInsets.symmetric(vertical: 15),
-                            color: Color(0xFFF5AE87),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(18),
-                              ),
-                            ),
+
                             child: Text(
                               "Add to Cart",
                               style: TextStyle(

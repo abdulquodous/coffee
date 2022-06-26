@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_template_null_safety/Data_Model/Maps_Model_Data.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:flutter/services.dart' show rootBundle;
@@ -37,7 +38,7 @@ class _MapsScreenT1State extends State<MapsScreenT1> {
   }
 
   @override
-  void initState() {
+  /*void initState() {
     // TODO: implement initState
     super.initState();
     setCustomMapPin();
@@ -249,109 +250,218 @@ class _MapsScreenT1State extends State<MapsScreenT1> {
       ),
     );
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     createMarker(context);
-    if (isMapCreated) {
+    /*if (isMapCreated) {
       getJsonFile("assets/nightmode.json").then(setMapStyle);
-    }
+    }*/
     return Scaffold(
         backgroundColor: Color(0xFF1E2026),
-        body: Stack(
-          children: <Widget>[
-            Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: GoogleMap(
-                mapType: MapType.normal,
-                initialCameraPosition: CameraPosition(
-                    target: LatLng(40.7237765, -74.017617), zoom: 13.0),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 49,left: 23,right: 23),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
 
-                // markers: markers,
-                onTap: (pos) {
-                  print(pos);
-                  Marker m = Marker(
-                      markerId: MarkerId('1'),
-                      icon: customIcon!,
-                      position: pos);
-                  setState(() {
-                    allMarkers.add(m);
-                  });
-                },
-                markers: Set.from(allMarkers),
-                onMapCreated: (GoogleMapController controller) {
-                  _controller = controller;
-                  _controller.setMapStyle(_mapStyle);
-                },
+              Text('Favourite',style: GoogleFonts.montserrat(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+              ),),
+              SizedBox(height: 20,),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.black,
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 200.0,
+              height: 172,
+
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Row(
+                         children: [
+                           Image(image: AssetImage('assets/ice.png'),height: 83,width: 86,),
+                           Container(height: 66,width: 150,
+
+                           child: Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text('Cappuccino (X2)',style: GoogleFonts.montserrat(
+                                 color: Colors.white,
+                                 fontSize: 14,
+                                 fontWeight: FontWeight.w700,
+                               ),),
+
+                               Text('2% Milk, Extra Wet, Warm, Vanilla Syrup',style: GoogleFonts.montserrat(
+                                 color: Colors.white,
+                                 fontSize: 10,
+                                 fontWeight: FontWeight.w400,
+                               ),),
+                               Text('\$6.40',style: GoogleFonts.montserrat(
+                                 color: Colors.white,
+                                 fontSize: 16,
+                                 fontWeight: FontWeight.w700,
+                               ),),
+
+
+                             ],
+                           ),
+                           )
+                         ],
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.all(8.0),
+                         child: Container(
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(8),
+                             color: Color(0xfff3B7787),
+                           ),
+                           height: 32,
+                           width: 32,
+                           child: Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: Image(
+                               image: AssetImage('assets/fill_heart.png',),color: Colors.red,
+
+                             ),
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                    SizedBox(height: 10,),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Color(0xfff3B7787),
+                          ),
+                          height: 32,
+                          width: 120,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image(
+                                image: AssetImage('assets/Cart.png'),
+                                height: 17,
+                                width: 17,
+
+                              ),
+                              Text('Add to cart',style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),),
+
+                            ],
+                          )
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+
+            )
+            /*  Container(
+                height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                child: PageView.builder(
-                  controller: _pageController,
-                  itemCount: coffeeShops.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return _restaurantList(index);
+                child: GoogleMap(
+                  mapType: MapType.normal,
+                  initialCameraPosition: CameraPosition(
+                      target: LatLng(40.7237765, -74.017617), zoom: 13.0),
+
+                  // markers: markers,
+                  onTap: (pos) {
+                    print(pos);
+                    Marker m = Marker(
+                        markerId: MarkerId('1'),
+                        icon: customIcon!,
+                        position: pos);
+                    setState(() {
+                      allMarkers.add(m);
+                    });
+                  },
+                  markers: Set.from(allMarkers),
+                  onMapCreated: (GoogleMapController controller) {
+                    _controller = controller;
+                    _controller.setMapStyle(_mapStyle);
                   },
                 ),
               ),
-            ),
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 0.0),
-                  child: Container(
-                    height: 75.0,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1E2026),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20.0, right: 20.0, top: 30.0),
-                      child: Center(
-                        child: Text(
-                          "Locations",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: "Sofia",
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20.0,
-                              letterSpacing: 1.4),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: 200.0,
+                  width: MediaQuery.of(context).size.width,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: coffeeShops.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return _restaurantList(index);
+                    },
+                  ),
+                ),
+              ),
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 0.0),
+                    child: Container(
+                      height: 75.0,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1E2026),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 20.0, right: 20.0, top: 30.0),
+                        child: Center(
+                          child: Text(
+                            "Locations",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Sofia",
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20.0,
+                                letterSpacing: 1.4),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  height: 40.0,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: <Color>[
-                        Color(0xFF1E2026).withOpacity(0.1),
-                        Color(0xFF1E2026).withOpacity(0.6),
-                        Color(0xFF1E2026),
-                      ],
+                  Container(
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: <Color>[
+                          Color(0xFF1E2026).withOpacity(0.1),
+                          Color(0xFF1E2026).withOpacity(0.6),
+                          Color(0xFF1E2026),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],*/
+      ]
+          ),
         ));
   }
 
-  moveCamera() {
-    _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-        target: coffeeShops[_pageController!.page!.toInt()].locationCoords!,
-        zoom: 14.0,
-        bearing: 45.0,
-        tilt: 45.0)));
-  }
+
 }

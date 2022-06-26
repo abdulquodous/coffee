@@ -115,8 +115,7 @@ class _CartScreenT4State extends State<CartScreenT4> {
                                       ///
                                       /// SnackBar show if cart delet
                                       ///
-                                      Scaffold.of(context)
-                                          .showSnackBar(SnackBar(
+                                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                         content: Text("Item Deleted"),
                                         duration: Duration(seconds: 2),
                                         backgroundColor: Colors.redAccent,
@@ -131,8 +130,7 @@ class _CartScreenT4State extends State<CartScreenT4> {
                                       ///
                                       /// SnackBar show if cart Archive
                                       ///
-                                      Scaffold.of(context)
-                                          .showSnackBar(SnackBar(
+                                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                         content: Text("Item Archive"),
                                         duration: Duration(seconds: 2),
                                         backgroundColor: Colors.blue,

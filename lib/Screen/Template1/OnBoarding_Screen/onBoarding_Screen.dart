@@ -248,7 +248,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               _currentPage != _numPages - 1
                   ? Align(
                       alignment: FractionalOffset.bottomRight,
-                      child: FlatButton(
+                      child: TextButton(
                           onPressed: () {
                             _pageController.nextPage(
                               duration: Duration(milliseconds: 500),

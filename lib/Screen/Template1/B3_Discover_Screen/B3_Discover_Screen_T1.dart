@@ -3,8 +3,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:food_template_null_safety/Data_Model/discover_model_data_1.dart';
 import 'package:food_template_null_safety/Screen/Template1/B1_Home_Screen/Search_Screen/Search_Screen_T1.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import 'Cart.dart';
 import 'Detail_Screen_Discover/Discover_Detail_1.dart';
+import 'Detail_Screen_Discover/historyScreen.dart';
+import 'in_queueScreen.dart';
 
 class DiscoverScreenT1 extends StatefulWidget {
   DiscoverScreenT1({Key? key}) : super(key: key);
@@ -13,14 +17,14 @@ class DiscoverScreenT1 extends StatefulWidget {
   _DiscoverScreenT1State createState() => _DiscoverScreenT1State();
 }
 
-class Product {
+/*class Product {
   String image;
   String name;
   String description;
   double price;
 
   Product(this.image, this.name, this.description, this.price);
-}
+}*/
 
 class _DiscoverScreenT1State extends State<DiscoverScreenT1> {
   @override
@@ -38,7 +42,76 @@ class _DiscoverScreenT1State extends State<DiscoverScreenT1> {
   }
 
   Widget build(BuildContext context) {
-    var _appBar = PreferredSize(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Color(0xfff212121),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 50),
+          child: Column(
+            children: [
+              Text('My Order',style: GoogleFonts.montserrat(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+              ),),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 23),
+                child: Container(
+                  height: 80,
+
+                  child: TabBar(
+
+                 indicatorColor: Color(0xfff43252),
+                    indicatorWeight: 1,
+                   // indicatorPadding: EdgeInsets.all(20),
+                    labelColor: Color(0xfff432525
+                    ),
+                    unselectedLabelColor: Color(0xfff929AA8),
+                    tabs: [
+                      Tab(text: ('Insta Doc'),),
+                      Tab(text: ('Medicines'),),
+                      Tab(text: ('Lab Tests'),),
+                    ],
+
+                  ),
+                ),
+              ),
+               Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(35)),
+                  ),
+                  height: MediaQuery.of(context).size.height/1.3,
+                  width: double.infinity,
+                  child: Expanded(
+                    child: TabBarView(
+                        children: [
+                          Cart(),
+                          In_Queue(),
+                          History()
+                        ]),
+                  ),
+
+
+
+
+
+
+
+                ),
+              ),
+
+
+            ],
+          ),
+        ),
+      ),
+    );
+
+  }
+    /*var _appBar = PreferredSize(
       preferredSize: Size.fromHeight(80.0),
       child: AppBar(
         brightness: Brightness.dark,
@@ -183,9 +256,10 @@ class _DiscoverScreenT1State extends State<DiscoverScreenT1> {
                   )
           ],
         ));
-  }
+  }*/
 }
 
+/*
 class DiscoverCardWidget2 extends StatelessWidget {
   final DiscoverDataModel1? discoverDataModel1;
   final PageController? pageController;
@@ -572,3 +646,4 @@ class CharacterCardBackgroundClipper extends CustomClipper<Path> {
     return true;
   }
 }
+*/

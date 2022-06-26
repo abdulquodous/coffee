@@ -34,6 +34,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  google_fonts:
   pin_code_text_field: ^1.8.0
   simple_animations: ^4.0.1
   after_layout: ^1.1.0
@@ -291,6 +292,7 @@ flutter:
     - assets/Template4/image/icon_monitor.png
     - assets/Template4/image/icon_video.png
     - assets/Template4/image/noMessage.png
+    - assets/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

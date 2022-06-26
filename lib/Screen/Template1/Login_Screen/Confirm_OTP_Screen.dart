@@ -141,12 +141,12 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
                       width: 20.0,
                     ),
                     Padding(
-                        padding: EdgeInsets.only(left: 20.0, top: 0.0, right: 20.0),
+                        padding: EdgeInsets.only(left: 10.0, top: 0.0, ),
                         child: Text(
                           'Confirm your OTP',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 34.0,
+                              fontSize: 30.0,
                               fontWeight: FontWeight.w600,
                               fontFamily: "Sofia",
                               shadows: [

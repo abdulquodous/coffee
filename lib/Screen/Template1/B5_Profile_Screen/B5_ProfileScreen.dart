@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_template_null_safety/Screen/Template2/Intro/Splash_Screen_T2.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import '../B3_Discover_Screen/Detail_Screen_Discover/couponsScreen.dart';
+import '../B3_Discover_Screen/Detail_Screen_Discover/personal_infoScreen.dart';
+import 'settingScreen.dart';
 import 'List_Profile_Screen/Another_Template.dart';
 import 'List_Profile_Screen/CallCenter_Screen_T1.dart';
 import 'List_Profile_Screen/Category_Screen_T1.dart';
@@ -16,12 +20,334 @@ class ProfileScreenT1 extends StatefulWidget {
 }
 
 class _ProfileScreenT1State extends State<ProfileScreenT1> {
+
   @override
   Widget build(BuildContext context) {
+    final _height=MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color(0xFF1E2026),
+      backgroundColor: Color(0xFF212121),
       body: SingleChildScrollView(
-        child: Stack(
+        child:Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0),
+                        spreadRadius: 5,
+                        blurRadius: 8,
+                        offset: Offset(0, 0), // changes position of shadow
+                      ),
+                    ],
+                    color: Colors.transparent,
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(
+                        'assets/profileimage.png',
+                      ),
+                    ),
+                  ),
+                  height: 240.0,
+                ),
+                Container(
+                  height: 240.0,
+                  decoration: BoxDecoration(
+                      /*boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 5,
+                          blurRadius: 50,
+                          offset: Offset(0, 30), // changes position of shadow
+                        ),
+                      ],*/
+                      color: Colors.white,
+                      gradient: LinearGradient(
+                          begin: FractionalOffset.topCenter,
+                          end: FractionalOffset.bottomCenter,
+                          colors: [
+                            Colors.grey.withOpacity(0.0),
+                            Color(0xfff212121),
+                          ],
+                          stops: [
+                            0.0,
+                            1.0
+                          ])),
+                )
+
+               //Image(image: AssetImage('assets/profileimage.png'),height: MediaQuery.of(context).size.height/4,width: double.infinity,fit: BoxFit.fitWidth,),
+
+               // Image(image: AssetImage('assets/shedowimg.png'),height: MediaQuery.of(context).size.height/4,width: double.infinity,fit: BoxFit.cover,),
+               /* Container(
+                  height: _height/4,
+                  width: double.infinity,
+
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 5,
+                        blurRadius: 50,
+                        offset: Offset(0, 30), // changes position of shadow
+                      ),
+                    ],
+                    gradient: LinearGradient(
+
+                       *//*stops: [0.0, 1.0],*//*
+                      colors: <Color>[
+                        Color(0xFF000000).withOpacity(0.1),
+                        Color(0xFF151515).withOpacity(0),
+
+                      ],
+                    ),
+                  ),
+                  child:Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 70,horizontal: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Alex Nourin',style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),),
+                        SizedBox(height: 5,),
+                        Text('alex.nourin12@gmail.com,',style:GoogleFonts.montserrat(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),)
+                    ],
+                    ),
+                  )
+                ),*/
+
+
+              ],
+            ),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>PersonalInfo()));
+              },
+              child: ListTile(
+                leading: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Color(0xfff694949),
+                  ),
+                  height: 50,
+                  width: 50,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Image(
+                      image: AssetImage('assets/information.png'),
+                    ),
+                  ),
+                ),
+                title: Text('Personal Info',style:GoogleFonts.montserrat(
+                  color: Color(0xfff694949),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),),
+              trailing: Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+              //  subtitle: Text("This is subtitle"),
+                /*trailing: Row(
+                    children: <Widget>[
+                      Icon(Icons.flight),
+                      Icon(Icons.flight_land)
+                    ]),*/
+              ),
+            ),
+            SizedBox(height: 10,),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Coupons()));
+              },
+              child: ListTile(
+                leading: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Color(0xfff694949),
+                  ),
+                  height: 50,
+                  width: 50,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Image(
+                      image: AssetImage('assets/coupons.png'),
+                    ),
+                  ),
+                ),
+                title: Text('Coupons',style:GoogleFonts.montserrat(
+                  color: Color(0xfff694949),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),),
+                trailing: Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+                //  subtitle: Text("This is subtitle"),
+                /*trailing: Row(
+                    children: <Widget>[
+                      Icon(Icons.flight),
+                      Icon(Icons.flight_land)
+                    ]),*/
+              ),
+            ),
+            SizedBox(height: 10,),
+            ListTile(
+              leading: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xfff694949),
+                ),
+                height: 50,
+                width: 50,
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Image(
+                    image: AssetImage('assets/payment.png'),
+                  ),
+                ),
+              ),
+              title: Text('Payment Method',style:GoogleFonts.montserrat(
+                color: Color(0xfff694949),
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),),
+              trailing: Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+              //  subtitle: Text("This is subtitle"),
+              /*trailing: Row(
+                  children: <Widget>[
+                    Icon(Icons.flight),
+                    Icon(Icons.flight_land)
+                  ]),*/
+            ),
+            SizedBox(height: 10,),
+            ListTile(
+              leading: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xfff694949),
+                ),
+                height: 50,
+                width: 50,
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Image(
+                    image: AssetImage('assets/callcenter.png'),
+                  ),
+                ),
+              ),
+              title: Text('Call Center',style:GoogleFonts.montserrat(
+                color: Color(0xfff694949),
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),),
+              trailing: Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+              //  subtitle: Text("This is subtitle"),
+              /*trailing: Row(
+                  children: <Widget>[
+                    Icon(Icons.flight),
+                    Icon(Icons.flight_land)
+                  ]),*/
+            ),
+            SizedBox(height: 10,),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingScreen()));
+              },
+              child: ListTile(
+                leading: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Color(0xfff694949),
+                  ),
+                  height: 50,
+                  width: 50,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Image(
+                      image: AssetImage('assets/setting.png'),
+                    ),
+                  ),
+                ),
+                title: Text('Settings',style:GoogleFonts.montserrat(
+                  color: Color(0xfff694949),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),),
+                trailing: Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+                //  subtitle: Text("This is subtitle"),
+                /*trailing: Row(
+                    children: <Widget>[
+                      Icon(Icons.flight),
+                      Icon(Icons.flight_land)
+                    ]),*/
+              ),
+            ),
+            SizedBox(height: 10,),
+            ListTile(
+              leading: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xfff694949),
+                ),
+                height: 50,
+                width: 50,
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Image(
+                    image: AssetImage('assets/tellus.png'),
+                  ),
+                ),
+              ),
+              title: Text('Tell Us What You Like',style:GoogleFonts.montserrat(
+                color: Color(0xfff694949),
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),),
+              trailing: Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+              //  subtitle: Text("This is subtitle"),
+              /*trailing: Row(
+                  children: <Widget>[
+                    Icon(Icons.flight),
+                    Icon(Icons.flight_land)
+                  ]),*/
+            ),
+            SizedBox(height: 10,),
+            ListTile(
+              leading: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xfff694949),
+                ),
+                height: 50,
+                width: 50,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Icon(Icons.logout_outlined,color: Colors.white,),
+                ),
+              ),
+              title: Text('Log Out',style:GoogleFonts.montserrat(
+                color: Color(0xfff694949),
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),),
+              trailing: Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+              //  subtitle: Text("This is subtitle"),
+              /*trailing: Row(
+                  children: <Widget>[
+                    Icon(Icons.flight),
+                    Icon(Icons.flight_land)
+                  ]),*/
+            ),
+          ],
+        ),
+
+
+
+        /* Stack(
           children: <Widget>[
             Image(
               image: AssetImage('assets/Template1/image/profileBackground.png'),
@@ -186,14 +512,14 @@ class _ProfileScreenT1State extends State<ProfileScreenT1> {
               ),
             ),
           ],
-        ),
+        ),*/
       ),
     );
   }
 }
 
 /// Component category class to set list
-class category extends StatelessWidget {
+/*class category extends StatelessWidget {
   @override
   String? txt, image;
   GestureTapCallback? tap;
@@ -257,4 +583,4 @@ class category extends StatelessWidget {
       ),
     );
   }
-}
+}*/
