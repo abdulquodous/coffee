@@ -44,7 +44,9 @@ children: [
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back_ios)),
+              children: [IconButton(onPressed: (){
+                Navigator.pop(context);
+              }, icon:Icon(Icons.arrow_back_ios)),
 
                 Row(
 

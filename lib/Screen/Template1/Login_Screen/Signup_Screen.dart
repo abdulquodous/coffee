@@ -346,7 +346,7 @@ class _signupTemplate1State extends State<signupTemplate1> {
                             "You are agree to our ",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 12.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.w200,
                                 fontFamily: "Sofia",
                                 letterSpacing: 0.9),
@@ -355,7 +355,7 @@ class _signupTemplate1State extends State<signupTemplate1> {
                             "terms and Conditions",
                             style: TextStyle(
                                 color: Color(0xFF0AD2DF),
-                                fontSize: 12.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.w200,
                                 fontFamily: "Sofia",
                                 letterSpacing: 0.9),
@@ -364,7 +364,7 @@ class _signupTemplate1State extends State<signupTemplate1> {
                             " as well as",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 12.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.w200,
                                 fontFamily: "Sofia",
                                 letterSpacing: 0.9),

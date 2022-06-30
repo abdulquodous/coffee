@@ -43,7 +43,9 @@ class ChooseStore extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
 
-          leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){},),
+          leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){
+            Navigator.pop(context);
+          },),
           title: Text('Chooes a Store',style: GoogleFonts.montserrat(
             color: Colors.white,
             fontSize: 20,

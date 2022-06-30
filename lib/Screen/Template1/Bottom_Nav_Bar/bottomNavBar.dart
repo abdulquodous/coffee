@@ -43,10 +43,10 @@ class _bottomNavBarState extends State<bottomNavBar> {
       backgroundColor: Colors.white,
       body: callPage(currentIndex),
       bottomNavigationBar: BottomNavigationDotBar(
-          color: Colors.grey.withOpacity(0.35),
+          color: Colors.white.withOpacity(0.35),
           items: <BottomNavigationDotBarItem>[
             BottomNavigationDotBarItem(
-                icon: IconData(0xe900, fontFamily: 'home'),
+                icon: IconData(0xe319, fontFamily: 'MaterialIcons'),
                 onTap: () {
                   setState(() {
                     currentIndex = 0;
@@ -54,8 +54,8 @@ class _bottomNavBarState extends State<bottomNavBar> {
                 }),
             BottomNavigationDotBarItem(
                 icon: IconData(
-                  0xe900,
-                  fontFamily: 'location',
+                  0xf04b,
+                  fontFamily: 'MaterialIcons',
                 ),
                 onTap: () {
                   setState(() {
@@ -64,21 +64,21 @@ class _bottomNavBarState extends State<bottomNavBar> {
                 }),
             BottomNavigationDotBarItem(
                 icon: IconData(
-                  0xe900,
-                  fontFamily: 'myorder',
+                  0xe59c,
+                  fontFamily: 'MaterialIcons',
                 ),
                 onTap: () {
                   setState(() {
                     currentIndex = 2;
                   });
                 }),
-            BottomNavigationDotBarItem(
+         /*   BottomNavigationDotBarItem(
                 icon: Icons.local_grocery_store,
                 onTap: () {
                   setState(() {
                     currentIndex = 3;
                   });
-                }),
+                }),*/
             BottomNavigationDotBarItem(
                 icon: IconData(0xe900, fontFamily: 'profile'),
                 onTap: () {

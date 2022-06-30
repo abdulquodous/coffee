@@ -12,6 +12,7 @@ import 'Search_Screen/Search_Screen_T1.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Search_Screen/menu_Screen.dart';
+import 'Search_Screen/product_Screen.dart';
 class HomeScreenT1 extends StatefulWidget {
   const HomeScreenT1({Key? key}) : super(key: key);
 
@@ -50,195 +51,202 @@ class _HomeScreenT1State extends State<HomeScreenT1> {
                )
            ),
          ),
-         Column(
-           children: [
-             Padding(
-               padding: const EdgeInsets.only(top: 47,left: 23,right: 23,),
-               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     children: [
-                       Image(image: AssetImage('assets/white.png'),height: 36,width: 86,),
-                       Container(
-                         decoration: BoxDecoration(
-                           borderRadius: BorderRadius.circular(8),
-                           color: Color(0xfff3B7787),
-                         ),
-                         height: 50,
-                         width: 50,
-                         child: Padding(
-                           padding: const EdgeInsets.all(8.0),
-                           child: Image(
-                             image: AssetImage('assets/Cart.png'),
-
+         SingleChildScrollView(
+           child: Column(
+             children: [
+               Padding(
+                 padding: const EdgeInsets.only(top: 47,left: 23,right: 23,),
+                 child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       children: [
+                         Image(image: AssetImage('assets/white.png'),height: 36,width: 86,),
+                         Container(
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(8),
+                             color: Color(0xfff3B7787),
                            ),
-                         ),
-                       ),
-
-
-                     ],
-                   ),
-                   SizedBox(height: 20,),
-                   Text('Hi, Alex',style: GoogleFonts.montserrat(
-                     fontSize: 32,
-
-                     fontWeight: FontWeight.w700,
-                   ),),
-                   SizedBox(height: 20,),
-                   Container(
-                     decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(5),
-                       color: Color(0xfff6A6A6AB2),
-                     ),
-                     height: 50,
-                     width: double.infinity,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Image.asset('assets/search.png',color: Colors.black,height: 17,width: 17,),
-
-                        ),
-                        hintText: 'Search',
-                        hintStyle: GoogleFonts.montserrat(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xfff999999),
-
-
-                        ),
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                      ),
-                    ),
-                   ),
-                   SizedBox(height: 20,),
-                   Text('Featured',style: GoogleFonts.montserrat(
-                     fontSize: 20,
-                     fontWeight: FontWeight.w700,
-                   ),),
-
-
-
-
-
-
-                 ],
-               ),
-
-             ),
-             SizedBox(height: 20,),
-             Container(
-               height: 256,
-               child: ListView.builder(
-
-                   shrinkWrap: true,
-
-                   scrollDirection: Axis.horizontal,
-                   itemCount: 3,
-                   itemBuilder: (BuildContext context, int index) {
-                     return Padding(
-                       padding: const EdgeInsets.all(8.0),
-                       child: Container(
-                         decoration: BoxDecoration(
-                           borderRadius: BorderRadius.circular(15),
-                           color: Color(0xfff6A6A6AB2),
-                         ),
-                         height:256,
-                         width: 213,
-                         child: Expanded(
+                           height: 50,
+                           width: 50,
                            child: Padding(
-                             padding: const EdgeInsets.all(18.0),
-                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                               children: [
-                                 Image(image: AssetImage('assets/ice.png'),fit: BoxFit.fill,),
-                              Text('Cappuccino',style: GoogleFonts.montserrat(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16
-                              ),),
-                              //   Image(image: AssetImage('assets/ice.png'),width: double.infinity,fit: BoxFit.cover,),
-                                 Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',style: GoogleFonts.montserrat(
-                                     color: Colors.white,
-                                     fontWeight: FontWeight.w400,
-                                     fontSize: 10
-                                 ),),
-                               ],
+                             padding: const EdgeInsets.all(8.0),
+                             child: Image(
+                               image: AssetImage('assets/Cart.png'),
 
                              ),
                            ),
                          ),
 
-                       ),
-                     );
-                   }
 
-               ),
-             ),
-             SizedBox(height: 30,),
-             Padding(
-               padding: const EdgeInsets.symmetric(horizontal: 23),
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Text('Menu',style: GoogleFonts.montserrat(
-                     fontSize: 20,
-                     fontWeight: FontWeight.w700,
-                   ),),
-                   GestureDetector(
-                     onTap: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>MenuItems()));
-                     },
-                     child: Text('See all',style: GoogleFonts.montserrat(
-                       fontSize: 16,
-                       fontWeight: FontWeight.w500,
-                       decoration: TextDecoration.underline,
+                       ],
+                     ),
+                     SizedBox(height: 20,),
+                     Text('Hi, Alex',style: GoogleFonts.montserrat(
+                       fontSize: 32,
+
+                       fontWeight: FontWeight.w700,
                      ),),
-                   ),
-
-                 ],
-               ),
-             ),
-             SizedBox(height: 30,),
-             Padding(
-               padding: const EdgeInsets.only(left: 23),
-               child: Container(
-                 height: 50,
-                 width: double.infinity,
-                 child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                         itemCount: 4,
-                         itemBuilder: (context, index) {
-                           return Padding(
-                             padding: const EdgeInsets.all(8.0),
-                             child: Container(
-                               decoration: BoxDecoration(
-                                 borderRadius: BorderRadius.circular(15),
-                                 color: Color(0xff432525),
-                               ),
-                              // height: 43,
-                               width: 141,
-                               child: Center(
-                                 child: Text('${menu[index]}',style: GoogleFonts.montserrat(
-                                   color: Colors.white,
-                                   fontSize: 16,
-                                   fontWeight: FontWeight.w600,
-                                 ),),
-                               ),
-
-                             ),
-                           );
-                         },
+                     SizedBox(height: 20,),
+                     Container(
+                       decoration: BoxDecoration(
+                         borderRadius: BorderRadius.circular(5),
+                         color: Color(0xfff6A6A6AB2),
                        ),
+                       height: 50,
+                       width: double.infinity,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Image.asset('assets/search.png',color: Colors.black,height: 17,width: 17,),
+
+                          ),
+                          hintText: 'Search',
+                          hintStyle: GoogleFonts.montserrat(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xfff999999),
+
+
+                          ),
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                        ),
+                      ),
+                     ),
+                     SizedBox(height: 20,),
+                     Text('Featured',style: GoogleFonts.montserrat(
+                       fontSize: 20,
+                       fontWeight: FontWeight.w700,
+                     ),),
+
+
+
+
+
+
+                   ],
+                 ),
 
                ),
-             )
-           ],
+               SizedBox(height: 20,),
+               Container(
+                 height: 256,
+                 child: ListView.builder(
+
+                     shrinkWrap: true,
+
+                     scrollDirection: Axis.horizontal,
+                     itemCount: 3,
+                     itemBuilder: (BuildContext context, int index) {
+                       return Padding(
+                         padding: const EdgeInsets.all(8.0),
+                         child: GestureDetector(
+                           onTap: (){
+                             Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductPage()));
+                           },
+                           child: Container(
+                             decoration: BoxDecoration(
+                               borderRadius: BorderRadius.circular(15),
+                               color: Color(0xfff6A6A6AB2),
+                             ),
+                             height:256,
+                             width: 213,
+                             child: Expanded(
+                               child: Padding(
+                                 padding: const EdgeInsets.all(18.0),
+                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                   children: [
+                                     Image(image: AssetImage('assets/ice.png'),fit: BoxFit.fill,),
+                                  Text('Cappuccino',style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16
+                                  ),),
+                                  //   Image(image: AssetImage('assets/ice.png'),width: double.infinity,fit: BoxFit.cover,),
+                                     Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',style: GoogleFonts.montserrat(
+                                         color: Colors.white,
+                                         fontWeight: FontWeight.w400,
+                                         fontSize: 10
+                                     ),),
+                                   ],
+
+                                 ),
+                               ),
+                             ),
+
+                           ),
+                         ),
+                       );
+                     }
+
+                 ),
+               ),
+               SizedBox(height: 30,),
+               Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 23),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     Text('Menu',style: GoogleFonts.montserrat(
+                       fontSize: 20,
+                       fontWeight: FontWeight.w700,
+                     ),),
+                     GestureDetector(
+                       onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>MenuItems()));
+                       },
+                       child: Text('See all',style: GoogleFonts.montserrat(
+                         fontSize: 16,
+                         fontWeight: FontWeight.w500,
+                         decoration: TextDecoration.underline,
+                       ),),
+                     ),
+
+                   ],
+                 ),
+               ),
+               SizedBox(height: 30,),
+               Padding(
+                 padding: const EdgeInsets.only(left: 23),
+                 child: Container(
+                   height: 50,
+                   width: double.infinity,
+                   child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                           itemCount: 4,
+                           itemBuilder: (context, index) {
+                             return Padding(
+                               padding: const EdgeInsets.all(8.0),
+                               child: Container(
+                                 decoration: BoxDecoration(
+                                   borderRadius: BorderRadius.circular(15),
+                                   color: Color(0xff432525),
+                                 ),
+                                // height: 43,
+                                 width: 141,
+                                 child: Center(
+                                   child: Text('${menu[index]}',style: GoogleFonts.montserrat(
+                                     color: Colors.white,
+                                     fontSize: 16,
+                                     fontWeight: FontWeight.w600,
+                                   ),),
+                                 ),
+
+                               ),
+                             );
+                           },
+                         ),
+
+                 ),
+               )
+             ],
+           ),
          ),
 
        ],

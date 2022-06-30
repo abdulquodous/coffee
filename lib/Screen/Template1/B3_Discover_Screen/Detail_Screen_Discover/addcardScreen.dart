@@ -45,7 +45,9 @@ class _AddCardState extends State<AddCard> {
           backgroundColor: Colors.transparent,
           elevation: 0,
 
-          leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){},),
+          leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){
+            Navigator.pop(context);
+          },),
           title: Text('Add Card',style: GoogleFonts.montserrat(
             color: Colors.white,
             fontSize: 24,

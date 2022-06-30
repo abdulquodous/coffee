@@ -47,7 +47,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
 
           leading: Padding(
             padding: const EdgeInsets.only(left: 25),
-            child: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){},),
+            child: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){
+              Navigator.pop(context);
+            },),
           ),
           title: Text('Personal Info',style: GoogleFonts.montserrat(
             color: Colors.white,
@@ -55,223 +57,225 @@ class _PersonalInfoState extends State<PersonalInfo> {
             fontWeight: FontWeight.w700,
           ),),
         ),),
-      body: Padding(
-        padding: const EdgeInsets.all(23.0),
-        child: Column(
-          children: [
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'Alex',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(23.0),
+          child: Column(
+            children: [
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Alex',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
                     ),
 
-                    border: InputBorder.none,
-
-
                   ),
-
                 ),
               ),
-            ),
-            SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'Nourin',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+              SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Nourin',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
                     ),
 
-                    border: InputBorder.none,
-
-
                   ),
-
-                ),
-              ),),
-            SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'alex.nourin12@gmail.com',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-
-                    border: InputBorder.none,
-
-
-                  ),
-
-                ),
-              ),),
-            SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: '(808) 555-0111',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-
-                    border: InputBorder.none,
-
-
-                  ),
-
-                ),
-              ),),
-            SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'Address Line 1',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-
-                    border: InputBorder.none,
-
-
-                  ),
-
-                ),
-              ),),
-            SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'Address Line 2',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-
-                    border: InputBorder.none,
-
-
-                  ),
-
-                ),
-              ),),
-            SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'City',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-
-                    border: InputBorder.none,
-
-
-                  ),
-
-                ),
-              ),),
-            SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'Zipcode',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-
-                    border: InputBorder.none,
-
-
-                  ),
-
-                ),
-              ),), SizedBox(height: 10,),
-            Container(height: 47,width: double.infinity,
-              color: Color(0xfff111111),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: 'State',
-                    hintStyle: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-
-                    border: InputBorder.none,
-
-
-                  ),
-
-                ),
-              ),),
-            SizedBox(height: 10,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Change password',style: GoogleFonts.montserrat(
-                  color: Color(0xfff694949),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 18,
                 ),),
-                Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
-              ],
-            )
+              SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'alex.nourin12@gmail.com',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
+                    ),
+
+                  ),
+                ),),
+              SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: '(808) 555-0111',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
+                    ),
+
+                  ),
+                ),),
+              SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Address Line 1',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
+                    ),
+
+                  ),
+                ),),
+              SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Address Line 2',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
+                    ),
+
+                  ),
+                ),),
+              SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'City',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
+                    ),
+
+                  ),
+                ),),
+              SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'Zipcode',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
+                    ),
+
+                  ),
+                ),), SizedBox(height: 10,),
+              Container(height: 47,width: double.infinity,
+                color: Color(0xfff111111),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: 'State',
+                      hintStyle: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      border: InputBorder.none,
+
+
+                    ),
+
+                  ),
+                ),),
+              SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Change password',style: GoogleFonts.montserrat(
+                    color: Color(0xfff694949),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                  ),),
+                  Icon(Icons.arrow_forward_ios,color: Color(0xfff694949),),
+                ],
+              )
 
 
 
-          ],
+            ],
+          ),
         ),
       ),
     );

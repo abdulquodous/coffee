@@ -28,8 +28,8 @@ class _BottomNavigationDotBarState extends State<BottomNavigationDotBar> {
   }
 
   _afterLayout(_) {
-    _color = widget.color ?? Colors.yellow.withOpacity(0.1);
-    _activeColor = widget.activeColor ?? Color(0xFFFF975D);
+    _color = widget.color ?? Colors.red.withOpacity(0.5);
+    _activeColor = widget.activeColor ?? Colors.white;
     final sizeBottomBar =
         (_keyBottomBar.currentContext!.findRenderObject() as RenderBox).size;
     _numPositionBase = ((sizeBottomBar.width / widget.items.length));
@@ -41,17 +41,17 @@ class _BottomNavigationDotBarState extends State<BottomNavigationDotBar> {
 
   @override
   Widget build(BuildContext context) => Container(
-        color: Color(0xFF1E2026),
+    color: Color.fromRGBO(90, 90, 90, 0.5).withOpacity(1),
         padding: EdgeInsets.fromLTRB(2, 3, 2, 0),
         child: Material(
-            color: Color(0xFF1E2026),
+            color: Color.fromRGBO(90, 90, 90, 0.5),
             elevation: 5,
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(0.0), topLeft: Radius.circular(0.0)),
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 8),
               decoration: BoxDecoration(
-                color: Color(0xFF1E2026),
+                color: Color.fromRGBO(90, 90, 90, 0.5).withOpacity(0.5),
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(0.0),
                     topLeft: Radius.circular(0.0)),
@@ -67,7 +67,7 @@ class _BottomNavigationDotBarState extends State<BottomNavigationDotBar> {
                 key: _keyBottomBar,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(bottom: 8, top: 1),
+                    padding: EdgeInsets.only(bottom: 7, top: 1),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: _createNavigationIconButtonList(
@@ -101,7 +101,7 @@ class _BottomNavigationDotBarState extends State<BottomNavigationDotBar> {
     if (indexPageSelected != _indexPageSelected) {
       setState(() {
         _positionLeftIndicatorDot =
-            (_numPositionBase! * (indexPageSelected + 1)) - _numDifferenceBase!;
+            (_numPositionBase! * (indexPageSelected )) + _numDifferenceBase!-4;
       });
       _indexPageSelected = indexPageSelected;
     }

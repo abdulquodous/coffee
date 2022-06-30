@@ -19,7 +19,9 @@ class Coupons extends StatelessWidget {
 
           leading: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 23),
-            child: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){},),
+            child: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: (){
+              Navigator.pop(context);
+            },),
           ),
           title: Text('Coupons',style: GoogleFonts.montserrat(
             color: Colors.white,

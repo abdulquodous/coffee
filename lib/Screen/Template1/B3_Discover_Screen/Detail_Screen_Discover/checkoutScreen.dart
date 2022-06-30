@@ -24,7 +24,9 @@ class _CheckOutState extends State<CheckOut> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios,color: Colors.white,)),
+                IconButton(onPressed: (){
+                  Navigator.pop(context);
+                }, icon: Icon(Icons.arrow_back_ios,color: Colors.white,)),
                 Center(
                   child: Text('Checkout',textAlign: TextAlign.center,style: GoogleFonts.montserrat(
                     color: Colors.white,
@@ -49,7 +51,7 @@ class _CheckOutState extends State<CheckOut> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: DropdownButton<String>(
-                      dropdownColor: Colors.transparent,
+                      dropdownColor: Colors.black,
                       value: dropdownValue,
                       isExpanded: true,
                       icon: const Icon(Icons.keyboard_arrow_down_outlined,color: Colors.white,),
